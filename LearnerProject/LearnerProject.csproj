@@ -133,6 +133,9 @@
     <Compile Include="Controllers\AdminCourseController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TeacherCourseController.cs" />
+    <Compile Include="Controllers\TeacherLayoutController.cs" />
+    <Compile Include="Controllers\TeacherLoginController.cs" />
     <Compile Include="Controllers\UILayoutController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -145,6 +148,10 @@
     <Compile Include="Migrations\202405031040551_mig_remove_relation_classroom_and_course.Designer.cs">
       <DependentUpon>202405031040551_mig_remove_relation_classroom_and_course.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202405071032359_mig_teacher_table.cs" />
+    <Compile Include="Migrations\202405071032359_mig_teacher_table.Designer.cs">
+      <DependentUpon>202405071032359_mig_teacher_table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context\LearnerContext.cs" />
     <Compile Include="Models\Entitities\About.cs" />
@@ -156,6 +163,7 @@
     <Compile Include="Models\Entitities\FAQ.cs" />
     <Compile Include="Models\Entitities\Review.cs" />
     <Compile Include="Models\Entitities\Student.cs" />
+    <Compile Include="Models\Entitities\Teacher.cs" />
     <Compile Include="Models\Entitities\Teslimonial.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -489,6 +497,10 @@
     <Content Include="Views\AdminCourse\AddCourse.cshtml" />
     <Content Include="Views\AdminCourse\UpdateCourse.cshtml" />
     <Content Include="Views\AdminDashBoard\Index.cshtml" />
+    <Content Include="Views\TeacherLayout\Index.cshtml" />
+    <Content Include="Views\TeacherCourse\Index.cshtml" />
+    <Content Include="Views\TeacherLogin\Index.cshtml" />
+    <Content Include="Views\TeacherCourse\AddCourse.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -528,6 +540,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202405031040551_mig_remove_relation_classroom_and_course.resx">
       <DependentUpon>202405031040551_mig_remove_relation_classroom_and_course.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405071032359_mig_teacher_table.resx">
+      <DependentUpon>202405071032359_mig_teacher_table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

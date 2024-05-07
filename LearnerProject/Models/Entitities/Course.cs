@@ -18,6 +18,10 @@ namespace LearnerProject.Models.Entitities
 
         public int CategoryId { get; set;}
 
+        public int? TeacherId { get; set; }
+
+        public virtual Teacher Teacher { get; set; }
+
         public virtual Category Category { get; set; }
 
         public List<Review> Reviews { get; set; }
