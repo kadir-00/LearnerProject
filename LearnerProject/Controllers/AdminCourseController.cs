@@ -29,7 +29,7 @@ namespace LearnerProject.Controllers
         }
         // silme islemi bitti 
 
-        // ekleneyi yapalim 
+        // eklemeyi yapalim 
         [HttpGet]
         public ActionResult AddCourse() 
         { // kategorileri viewbag'e tasimak istedigmiz icin bunu get'te yapiyoruz 

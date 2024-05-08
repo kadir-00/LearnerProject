@@ -63,5 +63,41 @@ namespace LearnerProject.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public ActionResult UpdateCourse(int id) 
+        {
+            List<SelectListItem> category = (from x in context.Categories.Where(x => x.Status == true).ToList()
+                                             select new SelectListItem
+                                             {
+                                                 Text = x.CategoryName,
+                                                 Value = x.CategoryId.ToString()
+                                             }).ToList();
+            ViewBag.Category = category;
+
+
+            var value = context.Courses.Find(id);
+
+            return View(value);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateCourse(Course course)
+        {
+            var value = context.Courses.Find(course.CourseId);
+
+            string name = Session["teacherName"].ToString();
+            value.TeacherId = context.Teacher.Where(x => x.NameSurname == name).Select(x => x.TeacherId).FirstOrDefault();
+
+            value.CourseName = course.CourseName;
+            value.CategoryId= course.CategoryId;
+            value.Price = course.Price;
+            value.Description = course.Description;
+            value.ImageUrl = course.ImageUrl;
+            context.SaveChanges();
+            return RedirectToAction("Index");
+
+
+        }
     }
 }

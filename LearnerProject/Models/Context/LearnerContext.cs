@@ -21,5 +21,6 @@ namespace LearnerProject.Models.Context
         public DbSet<Student> Students { get; set; }
         public DbSet<Teslimonial> Teslimonials { get; set; }
         public DbSet<Teacher> Teacher { get; set; }
+        public DbSet<CourseVideo> CourseVideos { get; set; }
     }
 }

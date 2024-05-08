@@ -152,6 +152,10 @@
     <Compile Include="Migrations\202405071032359_mig_teacher_table.Designer.cs">
       <DependentUpon>202405071032359_mig_teacher_table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202405071432424_mig_coursevideo_table_add.cs" />
+    <Compile Include="Migrations\202405071432424_mig_coursevideo_table_add.Designer.cs">
+      <DependentUpon>202405071432424_mig_coursevideo_table_add.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context\LearnerContext.cs" />
     <Compile Include="Models\Entitities\About.cs" />
@@ -160,6 +164,7 @@
     <Compile Include="Models\Entitities\ClassRoom.cs" />
     <Compile Include="Models\Entitities\Course.cs" />
     <Compile Include="Models\Entitities\CourseRegister.cs" />
+    <Compile Include="Models\Entitities\CourseVideo.cs" />
     <Compile Include="Models\Entitities\FAQ.cs" />
     <Compile Include="Models\Entitities\Review.cs" />
     <Compile Include="Models\Entitities\Student.cs" />
@@ -501,6 +506,7 @@
     <Content Include="Views\TeacherCourse\Index.cshtml" />
     <Content Include="Views\TeacherLogin\Index.cshtml" />
     <Content Include="Views\TeacherCourse\AddCourse.cshtml" />
+    <Content Include="Views\TeacherCourse\UpdateCourse.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -543,6 +549,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202405071032359_mig_teacher_table.resx">
       <DependentUpon>202405071032359_mig_teacher_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405071432424_mig_coursevideo_table_add.resx">
+      <DependentUpon>202405071432424_mig_coursevideo_table_add.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
