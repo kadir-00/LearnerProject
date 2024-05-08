@@ -1,0 +1,24 @@
+﻿@model LearnerProject.Models.Entitities.Message
+
+<div class="col-lg-7 mr-auto order-1" data-aos="fade-up" data-aos-delay="200">
+    <form action="#">
+        <div class="row">
+            <div class="col-6 mb-3">
+                @Html.TextBoxFor(x=>x.NameSurname , new {@class="form-control",@placeholder="Name Surname" })
+            </div>
+            <div class="col-6 mb-3">
+                @Html.TextBoxFor(x => x.Email, new { @class = "form-control", @placeholder = "EMAIL" })
+            </div>
+            <div class="col-12 mb-3">
+                @Html.TextBoxFor(x => x.Subject, new { @class = "form-control", @placeholder = "SUBJECT" })
+            </div>
+            <div class="col-12 mb-3">
+                @Html.TextAreaFor(x => x.MessageContent, new { @class = "form-control", @placeholder = "Content" })
+            </div>
+
+            <div class="col-12">
+                <input type="submit" value="Send Message" class="btn btn-primary">
+            </div>
+        </div>
+    </form>
+</div>
