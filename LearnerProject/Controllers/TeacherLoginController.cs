@@ -11,7 +11,6 @@ namespace LearnerProject.Controllers
 {
     public class TeacherLoginController : Controller
     {
-        // GET: TeacherLogin
 
         LearnerContext context = new LearnerContext();
 
@@ -34,7 +33,7 @@ namespace LearnerProject.Controllers
             {
                 FormsAuthentication.SetAuthCookie(values.UserSurname, false);
                 Session["teacherName"]=values.NameSurname;
-            return RedirectToAction("Index" , "TeacherCourse");
+                return RedirectToAction("Index" , "TeacherCourse");
             }
         }
     }

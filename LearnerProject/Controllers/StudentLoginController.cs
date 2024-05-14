@@ -11,30 +11,27 @@ namespace LearnerProject.Controllers
 {
     public class StudentLoginController : Controller
     {
-        // GET: StudentLogin
         LearnerContext context = new LearnerContext();
-
-        [HttpGet]
         public ActionResult Index()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult Index(Student students)
+        public ActionResult Index(Student student)
         {
-            var values = context.Students.FirstOrDefault(x => x.UserName == students.UserName && x.Password == students.Password);
+            var values = context.Students.FirstOrDefault(x => x.UserName == student.UserName && x.Password == student.Password);
             if (values == null)
             {
-                ModelState.AddModelError("","Kullanici adi ve ya sifre hatali ");
+                ModelState.AddModelError(" ", "Kullanıcı Adı veya Şifre Hatalı");
                 return View();
             }
             else
             {
-                FormsAuthentication.SetAuthCookie(values.UserName, false); // Cookie olusturduk 
-                Session["studentName"] = values.NameSurname;
-                Session["studentId"]= values.StudentId;
-                return RedirectToAction("Index", "CourseRegister");
+                Session.Abandon();
+                FormsAuthentication.SetAuthCookie(values.UserName, false);
+                Session["studentName"]=values.NameSurname;
+                return RedirectToAction("Index" , "StudentCourse");
             }
         }
     }

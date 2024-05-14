@@ -10,10 +10,18 @@ namespace LearnerProject.Controllers
     public class StudentCourseController : Controller
     {
         LearnerContext context = new LearnerContext();
+        [HttpGet]
         public ActionResult Index()
         {
-            // id islemi session'dan gelen id degere esit olan degerleri listele 
-            var values = context.CourseRegisters.Where(x => x.StudentId == (int)Session["studentId"]).ToList();
+            string studentName = Session["studentName"].ToString();
+            var student = context.Students.Where(x => x.NameSurname == studentName).Select(x => x.StudentId).FirstOrDefault();
+            var values = context.CourseRegisters.Where(x => x.StudentId == student).ToList();
+            return View(values);
+        }
+
+        public ActionResult MyCourseList(int id)
+        {
+            var values = context.CourseVideos.Where(x => x.CourseId == id).ToList();
             return View(values);
         }
     }

@@ -10,35 +10,33 @@ namespace LearnerProject.Controllers
 {
     public class CourseRegisterController : Controller
     {
-        
-       LearnerContext context = new LearnerContext();
+        LearnerContext context = new LearnerContext();
 
         [HttpGet]
         public ActionResult Index()
         {
-            // dropdown icin list yaptik 
+            var courseList = context.Courses.ToList();
 
-            var courselist = context.Courses.ToList();
+            List<SelectListItem> courses = (from x in courseList
+                                            select new SelectListItem
+                                            {
+                                                Text = x.CourseName,
+                                                Value = x.CourseId.ToString()
+                                            }).ToList();
 
-            List<SelectListItem> courses = (from x in courselist select new SelectListItem 
-            {
-            Text=x.CourseName,
-            Value=x.CourseId.ToString()
-
-            }).ToList();
-
-            ViewBag.courses = courses;
+            ViewBag.course = courses;
             return View();
         }
 
         [HttpPost]
-        public ActionResult Index(CourseRegister courseregister)
+        public ActionResult Index(CourseRegister courseRegister)
         {
-            var student = Session["studentName"].ToString();
-            courseregister.StudentId = context.Students.Where(x=>x.NameSurname==student).Select(x=>x.StudentId).FirstOrDefault();
-            context.CourseRegisters.Add(courseregister);
+            string student = Session["studentName"].ToString();
+            courseRegister.StudentId = context.Students.Where(x => x.NameSurname == student).Select(x => x.StudentId).FirstOrDefault();
+            context.CourseRegisters.Add(courseRegister);
             context.SaveChanges();
-            return RedirectToAction("Index","StudentCourse");
+
+            return RedirectToAction("Index", "StudentCourse");
         }
     }
-} 
+}

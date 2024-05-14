@@ -1,14 +1,14 @@
-﻿@model LearnerProject.Models.Entitities.CourseRegister 
+﻿﻿@model LearnerProject.Models.Entitities.CourseRegister
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/StudentLayout/Index.cshtml";
 }
 
-<h2>CourseRegister Index</h2>
+<h3>Kurs Kayıt Sayfası</h3>
 
 <form method="post">
-    <label>Kurs Adi </label>
-    @Html.DropDownListFor(x=>x.CourseId,(List<SelectListItem>)ViewBag.course,"Kurs Seciniz",new {@class="form-control"})
+    <label>Kurs Adı</label>
+    @Html.DropDownListFor(x => x.CourseId, (List<SelectListItem>)ViewBag.course, "Kurs Seçiniz", new { @class = "form-control" })
     <br />
-    <button class="btn btn-outline-primary">Kayit Ol</button>
+    <button class="btn btn-outline-primary">Kursa Kayıt Ol</button>
 </form>
