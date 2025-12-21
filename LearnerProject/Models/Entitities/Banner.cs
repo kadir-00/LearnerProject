@@ -8,7 +8,7 @@ namespace LearnerProject.Models.Entitities
     public class Banner
     {
         public int BannerId { get; set; }
-        public int Title { get; set; }
+        public string Title { get; set; }
         
     }
 }

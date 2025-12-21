@@ -134,6 +134,7 @@
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\CourseRegisterController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\FAQController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StudentCourseController.cs" />
     <Compile Include="Controllers\StudentLayoutController.cs" />
@@ -165,6 +166,10 @@
     <Compile Include="Migrations\202405081450016_mig_contact_and_message_table_added.cs" />
     <Compile Include="Migrations\202405081450016_mig_contact_and_message_table_added.Designer.cs">
       <DependentUpon>202405081450016_mig_contact_and_message_table_added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202410071325369_mig2.cs" />
+    <Compile Include="Migrations\202410071325369_mig2.Designer.cs">
+      <DependentUpon>202410071325369_mig2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context\LearnerContext.cs" />
@@ -532,6 +537,15 @@
     <Content Include="Views\StudentCourse\Index.cshtml" />
     <Content Include="Views\StudentCourse\MyCourseList.cshtml" />
     <Content Include="Views\StudentRegister\Index.cshtml" />
+    <Content Include="Views\FAQ\Index.cshtml" />
+    <Content Include="Views\FAQ\AddFAQ.cshtml" />
+    <Content Include="Views\FAQ\UpdateFAQ.cshtml" />
+    <Content Include="Views\Default\DefaultCategoryPartial.cshtml" />
+    <Content Include="Views\Default\DefaultFAQPartial.cshtml" />
+    <Content Include="Views\Default\DefaultTestimonialPartial.cshtml" />
+    <Content Include="Views\Default\DefaultClassPartial.cshtml" />
+    <Content Include="Views\Default\DefaultAboutPartial.cshtml" />
+    <Content Include="Views\Default\DefaultBannerPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -578,6 +592,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202405081450016_mig_contact_and_message_table_added.resx">
       <DependentUpon>202405081450016_mig_contact_and_message_table_added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202410071325369_mig2.resx">
+      <DependentUpon>202410071325369_mig2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,0 +1,16 @@
+﻿@model LearnerProject.Models.Entitities.FAQ
+@{
+    ViewBag.Title = "AddFAQ";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>AddFAQ Sayfasi</h2>
+
+<form method="post">
+
+    @Html.TextBoxFor(x => x.Question, new { @class = "form-control mb-4", @placeholder = "Question" })
+    @Html.TextBoxFor(x => x.Answer, new { @class = "form-control mb-4", @placeholder = "Answer" })
+    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control mb-4", @placeholder = "ImageUrl" })
+    <button class="btn btn-outline-primary"><i class="fas fa-save">Kaydet</i></button>
+</form>
+

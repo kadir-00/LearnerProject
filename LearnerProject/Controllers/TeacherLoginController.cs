@@ -23,7 +23,7 @@ namespace LearnerProject.Controllers
         [HttpPost]
         public ActionResult Index(Teacher teacher)
         {
-            var values = context.Teacher.FirstOrDefault(x => x.UserSurname == teacher.UserSurname && x.Password == teacher.Password);
+            var values = context.Teacher.FirstOrDefault(x => x.NameSurname == teacher.NameSurname && x.Password == teacher.Password);
             if (values == null) 
             {
                 ModelState.AddModelError(" ","Kullanici adi ve ya sifre hatali ");
@@ -31,8 +31,8 @@ namespace LearnerProject.Controllers
             }
             else 
             {
-                FormsAuthentication.SetAuthCookie(values.UserSurname, false);
-                Session["teacherName"]=values.NameSurname;
+                FormsAuthentication.SetAuthCookie(values.NameSurname, false);
+                Session["teacherName"] =values.NameSurname;
                 return RedirectToAction("Index" , "TeacherCourse");
             }
         }

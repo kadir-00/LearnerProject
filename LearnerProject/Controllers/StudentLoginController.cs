@@ -12,6 +12,8 @@ namespace LearnerProject.Controllers
     public class StudentLoginController : Controller
     {
         LearnerContext context = new LearnerContext();
+
+        [HttpGet]
         public ActionResult Index()
         {
             return View();
@@ -28,7 +30,7 @@ namespace LearnerProject.Controllers
             }
             else
             {
-                Session.Abandon();
+                //Session.Abandon();
                 FormsAuthentication.SetAuthCookie(values.UserName, false);
                 Session["studentName"]=values.NameSurname;
                 return RedirectToAction("Index" , "StudentCourse");

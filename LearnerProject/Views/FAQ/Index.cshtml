@@ -1,0 +1,41 @@
+﻿@model List<LearnerProject.Models.Entitities.FAQ>
+@{
+    ViewBag.Title = "FAQIndex";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int bum = 0;
+}
+
+<h2> FAQIndex </h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th class="col-md-3">#</th>
+            <th class="col-md-3">Question</th>
+            <th class="col-md-3">Answer</th>
+            <th class="col-md-3">ImageU</th>
+            <th class="col-md-1">Status</th>
+            <th class="col-md-1 bt-2">İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            bum++;
+            <tr>
+                <th class="text-center">@bum</th>
+                <td>@item.Question</td>
+                <td>@item.Answer</td>
+                <td>@item.ImageUrl</td>
+                <td>@item.Status</td>
+
+                <td class="text-center">
+                    <a href="/FAQ/DeleteFAQ/@item.FAQId" class="btn btn-outline-danger"><i class="fa fa-trash"></i> Sil</a>
+                    <a href="/FAQ/UpdateFAQ/@item.FAQId" class="btn btn-outline-info"> <i class="fa fa-plus"></i>Guncelle</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/FAQ/AddFAQ/" class="btn btn-outline-success"><i class="fa fa-plus m-2"></i> Ekle</a>
+
