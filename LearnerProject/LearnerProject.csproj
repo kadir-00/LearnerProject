@@ -546,6 +546,9 @@
     <Content Include="Views\Default\DefaultClassPartial.cshtml" />
     <Content Include="Views\Default\DefaultAboutPartial.cshtml" />
     <Content Include="Views\Default\DefaultBannerPartial.cshtml" />
+    <Content Include="Views\AdminLayout\AdminLayoutNavbar.cshtml" />
+    <Content Include="Views\AdminLayout\AdminLayoutFooter.cshtml" />
+    <Content Include="Views\AdminLayout\AdminLayoutJs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

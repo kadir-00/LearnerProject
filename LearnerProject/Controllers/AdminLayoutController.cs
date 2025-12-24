@@ -23,5 +23,20 @@ namespace LearnerProject.Controllers
         {
             return PartialView();
         }
+
+        public PartialViewResult AdminLayoutNavbar()
+        {
+            return PartialView();
+        }
+
+        public PartialViewResult AdminLayoutFooter()
+        {
+            return PartialView();
+        }
+
+        public PartialViewResult AdminLayoutJs() 
+        { 
+        return PartialView();
+        }
     }
 }
