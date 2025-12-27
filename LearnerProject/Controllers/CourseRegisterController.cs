@@ -32,10 +32,10 @@ namespace LearnerProject.Controllers
         public ActionResult Index(CourseRegister courseRegister)
         {
             string student = Session["studentName"].ToString();
-            courseRegister.StudentId = context.Students.Where(x => x.NameSurname == student).Select(x => x.StudentId).FirstOrDefault();
+            courseRegister.StudentId = context.Students.Where(x => x.UserName == student).Select(x => x.StudentId).FirstOrDefault();
             context.CourseRegisters.Add(courseRegister);
             context.SaveChanges();
-
+            //return View();
             return RedirectToAction("Index", "StudentCourse");
         }
     }

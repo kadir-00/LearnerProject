@@ -14,7 +14,7 @@ namespace LearnerProject.Controllers
         public ActionResult Index()
         {
             string studentName = Session["studentName"].ToString();
-            var student = context.Students.Where(x => x.NameSurname == studentName).Select(x => x.StudentId).FirstOrDefault();
+            var student = context.Students.Where(x => x.UserName == studentName).Select(x => x.StudentId).FirstOrDefault();
             var values = context.CourseRegisters.Where(x => x.StudentId == student).ToList();
             return View(values);
         }

@@ -549,6 +549,7 @@
     <Content Include="Views\AdminLayout\AdminLayoutNavbar.cshtml" />
     <Content Include="Views\AdminLayout\AdminLayoutFooter.cshtml" />
     <Content Include="Views\AdminLayout\AdminLayoutJs.cshtml" />
+    <Content Include="Views\Default\AllCourse.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

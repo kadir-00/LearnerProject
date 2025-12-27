@@ -32,19 +32,20 @@ namespace LearnerProject.Controllers
 
         public PartialViewResult DefaultAboutPartial()
         {
+            var ogrtcount = context.Teacher.Count();
+            var ogrcount = context.Students.Count();
+            TempData["StudentCount"] = ogrcount;
+            TempData["TeacherCount"] = ogrtcount;
             var values = context.Abouts.ToList();
             return PartialView(values);
         }
 
         public PartialViewResult DefaultCoursePartial()
         {
-
             // take burada kac tane kurs gosterecegimizi belirlemeye yariyor 
             // OrderByDescending ile de id ye gore siraladik yani son eklenen 3 kurs gozukecek
             var values = context.Courses.Include(x=>x.Reviews).Include(x=>x.CourseVideos).OrderByDescending(x=>x.CourseId).Take(3).ToList();
             return PartialView(values);
-
-            
         }
 
         public ActionResult CourseDetail(int id) 
@@ -53,6 +54,12 @@ namespace LearnerProject.Controllers
             // yorumlari getirmek istiyoruz ama yorumlarda baska tablo da o yuzden o tablodan gerekli bilgiyi almak icin filtre uyguladik
             var reviewlist = context.Reviews.Where(x=>x.CourseId==id).ToList();
             ViewBag.reviwe = reviewlist;
+            return View(values);
+        }
+
+        public ActionResult AllCourse()
+        {
+            var values = context.Courses.ToList();
             return View(values);
         }
 
@@ -79,6 +86,5 @@ namespace LearnerProject.Controllers
         var values = context.ClassRooms.ToList();
             return PartialView(values);
         }
-
     }
 }

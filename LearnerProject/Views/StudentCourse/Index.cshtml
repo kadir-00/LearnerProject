@@ -13,8 +13,6 @@
         <th>Kurs Adı</th>
         <th>Kurs İçeriği</th>
     </tr>
-
-
     @foreach (var item in Model)
     {
         count++;
@@ -24,7 +22,4 @@
             <td><a href="/StudentCourse/MyCourseList/@item.CourseId" class="btn btn-outline-info">Kurs İçeriği</a> </td>
         </tr>
     }
-
-
-
 </table> 
