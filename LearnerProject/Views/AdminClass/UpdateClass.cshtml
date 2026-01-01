@@ -1,0 +1,30 @@
+﻿@model LearnerProject.Models.Entitities.ClassRoom
+@{
+    ViewBag.Title = "UpdateClass";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Sinif Guncelleme Sayfasi</h2>
+
+<form method="post">
+    @* hiddenfor ile id'yi goruyoruz *@
+    @Html.HiddenFor(x => x.ClassRoomId)
+
+
+    <label>Sinif Adi</label>
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+
+    <label>Icon</label>
+    @Html.TextBoxFor(x => x.Icon, new { @class = "form-control" })
+    <br />
+
+    <label>Aciklama</label>
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-outline-primary">Guncelle</button>
+
+</form>
+
+

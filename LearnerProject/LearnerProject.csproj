@@ -127,6 +127,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminAboutController.cs" />
+    <Compile Include="Controllers\AdminClassController.cs" />
     <Compile Include="Controllers\AdminDashBoardController.cs" />
     <Compile Include="Controllers\AdminLayoutController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
@@ -550,6 +552,12 @@
     <Content Include="Views\AdminLayout\AdminLayoutFooter.cshtml" />
     <Content Include="Views\AdminLayout\AdminLayoutJs.cshtml" />
     <Content Include="Views\Default\AllCourse.cshtml" />
+    <Content Include="Views\AdminClass\Index.cshtml" />
+    <Content Include="Views\AdminClass\AddClass.cshtml" />
+    <Content Include="Views\AdminClass\UpdateClass.cshtml" />
+    <Content Include="Views\AdminAbout\Index.cshtml" />
+    <Content Include="Views\AdminAbout\AddAbout.cshtml" />
+    <Content Include="Views\AdminAbout\UpdateAbout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

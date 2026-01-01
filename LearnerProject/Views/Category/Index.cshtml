@@ -13,9 +13,7 @@
     <tr>
         <th>#</th>
         <th>Kategori Adi</th>
-   
         <th>Islemler</th>
-
     </tr>
 
     @foreach (var item in Model)
@@ -24,18 +22,13 @@
         <tr>
             <th>@count</th>
             <td>@item.CategoryName</td>
-           
             <td>
                 @*// i icon eklemek icin*@
                 <a href="/Category/DeleteCategory/@item.CategoryId" class="btn btn-outline-danger" > <i class="fa fa-trash>" ></i> SIL</a>
                 <a href="/Category/UpdateCategory/@item.CategoryId" class="btn btn-outline-danger"> <i class="fa fa-pen>"> </i> GUNCELLE</a>
-
             </td>
         </tr>
-       
-            
     }
-
 </table>
 <a href="/Category/AddCategory" class="btn btn-outline-primary">EKLE</a>
 

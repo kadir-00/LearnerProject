@@ -1,0 +1,46 @@
+﻿@model List<LearnerProject.Models.Entitities.About>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h3>Hakkimda</h3>
+@{
+    int count = 0;
+}
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>#</th>
+        <th>Baslik</th>
+        <th>Aciklama</th>
+        <th>Resim</th>
+        <th>Item1</th>
+        <th>Item2</th>
+        <th>Item3</th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.Title</td>
+            <td>@item.Description</td>
+            <td>@item.ImageUrl</td>
+            <td>@item.Item1</td>
+            <td>@item.Item2</td>
+            <td>@item.Item3</td>
+
+            <td>
+                @*// i icon eklemek icin*@
+                <a href="/AdminAbout/DeleteAbout/@item.AboutId" class="btn btn-outline-danger"> <i class="fa fa-trash>"></i> SIL</a>
+                <a href="/AdminAbout/UpdateAbout/@item.AboutId" class="btn btn-outline-danger"> <i class="fa fa-pen>"> </i> GUNCELLE</a>
+            </td>
+        </tr>
+    }
+
+</table>
+<a href="/AdminAbout/AddAbout" class="btn btn-outline-primary">EKLE</a>
+
