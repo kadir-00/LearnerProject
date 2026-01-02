@@ -15,14 +15,26 @@ namespace LearnerProject.Controllers
         {
             ViewBag.v1 = context.Courses.Count();
             ViewBag.v2 = context.Categories.Count();
-            ViewBag.v3= context.ClassRooms.Count();
-            ViewBag.v4=context.Students.Count();
+            ViewBag.v3 = context.ClassRooms.Count();
+            ViewBag.v4 = context.Students.Count();
             // en yuksek fiyatli kursu yazdiracagiz
-            ViewBag.v5=context.Courses.OrderByDescending(x=>x.Price).Select(x=>x.CourseName).FirstOrDefault();
+            ViewBag.v5 = context.Courses.OrderByDescending(x => x.Price).Select(x => x.CourseName).FirstOrDefault();
             // kodlama kategorisindeki kurs sayisi 
-            ViewBag.v6=context.Courses.Where(x=>x.Category.CategoryName=="Code").Count();
+            ViewBag.v6 = context.Courses.Where(x => x.Category.CategoryName == "Code").Count();
             // en yuksek puanli kursun adi
             ViewBag.v7 = context.Reviews.OrderByDescending(x => x.ReviewValue).Select(x => x.Course.CourseName).FirstOrDefault();
+
+            // Toplam yorum sayisi
+            ViewBag.v8 = context.Reviews.Count();
+            // Toplam Egitmen Sayisi
+            ViewBag.v9 = context.Teacher.Count();
+            // Okunmamis Mesaj Sayisi
+            ViewBag.v10 = context.Messages.Where(x => x.IsRead == false).Count();
+            // Referans Sayisi
+            ViewBag.v11 = context.Teslimonials.Count();
+            // Toplam Kurs Kaydi
+            ViewBag.v12 = context.CourseRegisters.Count();
+
             return View();
         }
     }

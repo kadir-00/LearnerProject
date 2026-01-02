@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch IIS Express & Chrome",
+            "type": "pwa-chrome",
+            "request": "launch",
+            "url": "https://localhost:44374/",
+            "webRoot": "${workspaceFolder}/LearnerProject",
+            "preLaunchTask": "Start IIS Express"
+        }
+    ]
+}

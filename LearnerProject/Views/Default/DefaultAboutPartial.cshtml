@@ -1,11 +1,14 @@
 ﻿@model List<LearnerProject.Models.Entitities.About>
 
-<div class="untree_co-section">
+<div class="untree_co-section" id="about-us">
     <div class="container">
         <div class="row justify-content-between">
             <div class="col-lg-5 mb-5">
-                <h2 class="line-bottom mb-4" data-aos="fade-up" data-aos-delay="0">About Us</h2>
-                @foreach (var item in Model)
+                <h2 class="line-bottom mb-4" data-aos="fade-up" data-aos-delay="0">Hakkımızda</h2>
+                @{
+                    var item = Model.FirstOrDefault();
+                }
+                @if (item != null)
                 {
                     <p data-aos="fade-up" data-aos-delay="100">@item.Description</p>
 
@@ -19,29 +22,31 @@
 
                     <div class="row count-numbers mb-5">
                         <div class="col-4 col-lg-4" data-aos="fade-up" data-aos-delay="0">
-                            <span class="counter d-block"><span data-number="@TempData["StudentCount"].ToString()">0</span><span>+</span></span>
-                            <span class="caption-2">Adet Ogrencimiz</span>
+                            <span class="counter d-block"><span
+                                    data-number="@TempData["StudentCount"].ToString()">0</span><span>+</span></span>
+                            <span class="caption-2">Öğrenci</span>
                         </div>
                         <div class="col-4 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                            <span class="counter d-block"><span data-number="@TempData["TeacherCount"]">0</span><span>+</span></span>
-                            <span class="caption-2">Adet Ogretmenizimiz</span>
+                            <span class="counter d-block"><span
+                                    data-number="@TempData["TeacherCount"]">0</span><span>+</span></span>
+                            <span class="caption-2">Eğitmen</span>
                         </div>
                         @*<div class="col-4 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                     <span class="counter d-block"><span data-number="12">0</span><span></span></span>
                     <span class="caption-2">No. Awards</span>
-                </div>*@
+                    </div>*@
                     </div>
                 }
                 <p data-aos="fade-up" data-aos-delay="200">
-                    <a href="#" class="btn btn-primary mr-1">Admission</a>
-                    <a href="#" class="btn btn-outline-primary">Learn More</a>
+                    <a href="/StudentRegister/Index" class="btn btn-primary mr-1">Kayıt Ol</a>
+                    <a href="/Default/AllCourse" class="btn btn-outline-primary">Daha Fazla</a>
                 </p>
             </div>
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
                 <div class="bg-1"></div>
-                <a href="https://vimeo.com/342333493" data-fancybox class="video-wrap">
+                <a href="@(Model.FirstOrDefault()?.VideoUrl)" data-fancybox class="video-wrap">
                     <span class="play-wrap"><span class="icon-play"></span></span>
-                    <img src="images/img-school-4-min.jpg" alt="Image" class="img-fluid rounded">
+                    <img src="@(Model.FirstOrDefault()?.ImageUrl)" alt="Image" class="img-fluid rounded">
                 </a>
             </div>
         </div>

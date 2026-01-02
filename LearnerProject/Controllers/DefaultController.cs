@@ -16,8 +16,8 @@ namespace LearnerProject.Controllers
         LearnerContext context = new LearnerContext();
         public ActionResult Index()
         {
-            var ogrtcount= context.Teacher.Count();
-            var ogrcount= context.Students.Count();
+            var ogrtcount = context.Teacher.Count();
+            var ogrcount = context.Students.Count();
             TempData["StudentCount"] = ogrcount;
             TempData["TeacherCount"] = ogrtcount;
             return View();
@@ -44,15 +44,15 @@ namespace LearnerProject.Controllers
         {
             // take burada kac tane kurs gosterecegimizi belirlemeye yariyor 
             // OrderByDescending ile de id ye gore siraladik yani son eklenen 3 kurs gozukecek
-            var values = context.Courses.Include(x=>x.Reviews).Include(x=>x.CourseVideos).OrderByDescending(x=>x.CourseId).Take(3).ToList();
+            var values = context.Courses.Include(x => x.Reviews).Include(x => x.CourseVideos).OrderByDescending(x => x.CourseId).Take(3).ToList();
             return PartialView(values);
         }
 
-        public ActionResult CourseDetail(int id) 
+        public ActionResult CourseDetail(int id)
         {
-            var values = context.Courses.Find(id);  
+            var values = context.Courses.Find(id);
             // yorumlari getirmek istiyoruz ama yorumlarda baska tablo da o yuzden o tablodan gerekli bilgiyi almak icin filtre uyguladik
-            var reviewlist = context.Reviews.Where(x=>x.CourseId==id).ToList();
+            var reviewlist = context.Reviews.Include(x => x.Student).Where(x => x.CourseId == id).ToList();
             ViewBag.reviwe = reviewlist;
             return View(values);
         }
@@ -71,7 +71,7 @@ namespace LearnerProject.Controllers
 
         public PartialViewResult DefaultFAQPartial()
         {
-            var values = context.FAQs.Where(x=>x.Status==true).ToList();
+            var values = context.FAQs.Where(x => x.Status == true).ToList();
             return PartialView(values);
         }
 
@@ -82,8 +82,8 @@ namespace LearnerProject.Controllers
         }
 
         public PartialViewResult DefaultClassPartial()
-        { 
-        var values = context.ClassRooms.ToList();
+        {
+            var values = context.ClassRooms.ToList();
             return PartialView(values);
         }
     }

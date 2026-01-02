@@ -1,0 +1,33 @@
+@model List<LearnerProject.Models.Entitities.Teacher>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h3>Egitmenler</h3>
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>#</th>
+        <th>Ad Soyad</th>
+        <th>Kullanici Adi (Surname)</th>
+        <th>Sifre</th>
+        <th>Islemler</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.TeacherId</th>
+            <td>@item.NameSurname</td>
+            <td>@item.UserSurname</td>
+            <td>@item.Password</td>
+            <td>
+                <a href="/AdminTeacher/DeleteTeacher/@item.TeacherId" class="btn btn-outline-danger btn-sm m-1"> <i
+                        class="fa fa-trash"></i> Sil</a>
+                <a href="/AdminTeacher/UpdateTeacher/@item.TeacherId" class="btn btn-outline-info btn-sm m-1"> <i
+                        class="fa fa-pen"></i> Guncelle</a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="/AdminTeacher/AddTeacher" class="btn btn-outline-success"><i class="fa fa-plus m-2"></i> Ekle</a>

@@ -15,6 +15,7 @@
         <th>Baslik</th>
         <th>Aciklama</th>
         <th>Resim</th>
+        <th>Video Linki</th>
         <th>Item1</th>
         <th>Item2</th>
         <th>Item3</th>
@@ -29,18 +30,20 @@
             <td>@item.Title</td>
             <td>@item.Description</td>
             <td>@item.ImageUrl</td>
+            <td>@item.VideoUrl</td>
             <td>@item.Item1</td>
             <td>@item.Item2</td>
             <td>@item.Item3</td>
 
             <td>
                 @*// i icon eklemek icin*@
-                <a href="/AdminAbout/DeleteAbout/@item.AboutId" class="btn btn-outline-danger"> <i class="fa fa-trash>"></i> SIL</a>
-                <a href="/AdminAbout/UpdateAbout/@item.AboutId" class="btn btn-outline-danger"> <i class="fa fa-pen>"> </i> GUNCELLE</a>
+                <a href="/AdminAbout/DeleteAbout/@item.AboutId" class="btn btn-outline-danger btn-sm m-1"> <i
+                        class="fa fa-trash"></i> Sil</a>
+                <a href="/AdminAbout/UpdateAbout/@item.AboutId" class="btn btn-outline-info btn-sm m-1"> <i
+                        class="fa fa-pen"></i> Güncelle</a>
             </td>
         </tr>
     }
 
 </table>
-<a href="/AdminAbout/AddAbout" class="btn btn-outline-primary">EKLE</a>
-
+<a href="/AdminAbout/AddAbout" class="btn btn-outline-success"><i class="fa fa-plus m-2"></i> Ekle</a>

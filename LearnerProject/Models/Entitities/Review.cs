@@ -18,6 +18,6 @@ namespace LearnerProject.Models.Entitities
 
         public int StudentId { get; set; }
 
-        public virtual Student Student { get;}
+        public virtual Student Student { get; set; }
     }
 }

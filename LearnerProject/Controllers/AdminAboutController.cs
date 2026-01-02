@@ -53,13 +53,15 @@ namespace LearnerProject.Controllers
         {
             var value = context.Abouts.Find(about.AboutId);
             value.Title = about.Title;
-            value.Description= about.Description;
+            value.Description = about.Description;
             value.ImageUrl = about.ImageUrl;
+            value.VideoUrl = about.VideoUrl;
             value.Item1 = about.Item1;
             value.Item2 = about.Item2;
             value.Item3 = about.Item3;
             context.SaveChanges();
             return RedirectToAction(nameof(Index));
         }
+
     }
 }

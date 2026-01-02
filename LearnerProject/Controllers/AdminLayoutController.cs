@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LearnerProject.Models.Context;
+using LearnerProject.Models.Entitities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,25 +10,27 @@ namespace LearnerProject.Controllers
 {
     public class AdminLayoutController : Controller
     {
+        LearnerContext context = new LearnerContext();
         // GET: AdminLayout
         public ActionResult Index()
         {
             return View();
         }
 
-        public PartialViewResult AdminLayoutHead() 
+        public PartialViewResult AdminLayoutHead()
         {
-        return PartialView();
+            return PartialView();
         }
 
-        public PartialViewResult AdminLayoutSidebar() 
+        public PartialViewResult AdminLayoutSidebar()
         {
             return PartialView();
         }
 
         public PartialViewResult AdminLayoutNavbar()
         {
-            return PartialView();
+            var values = context.Messages.OrderByDescending(x => x.MessageId).Take(3).ToList();
+            return PartialView(values);
         }
 
         public PartialViewResult AdminLayoutFooter()
@@ -34,9 +38,9 @@ namespace LearnerProject.Controllers
             return PartialView();
         }
 
-        public PartialViewResult AdminLayoutJs() 
-        { 
-        return PartialView();
+        public PartialViewResult AdminLayoutJs()
+        {
+            return PartialView();
         }
     }
 }

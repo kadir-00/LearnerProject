@@ -1,0 +1,31 @@
+@model LearnerProject.Models.Entitities.Review
+@{
+    ViewBag.Title = "UpdateReview";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Gorus/Review Guncelleme Sayfasi</h2>
+
+<form method="post">
+    @Html.HiddenFor(x => x.ReviewId)
+
+    @* Update logic in Controller only updates Value and Comment, so IDs are readonly or hidden *@
+    <label>Kurs ID (Degistirilemez)</label>
+    @Html.TextBoxFor(x => x.CourseId, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+
+    <label>Ogrenci ID (Degistirilemez)</label>
+    @Html.TextBoxFor(x => x.StudentId, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+
+    <label>Puan (1-5)</label>
+    @Html.TextBoxFor(x => x.ReviewValue, new { @class = "form-control" })
+    <br />
+
+    <label>Yorum</label>
+    @Html.TextAreaFor(x => x.Comment, new { @class = "form-control", rows=5 })
+    <br />
+
+    <button class="btn btn-outline-primary">Guncelle</button>
+
+</form>

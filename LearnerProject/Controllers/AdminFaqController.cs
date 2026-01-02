@@ -8,15 +8,31 @@ using System.Web.Mvc;
 
 namespace LearnerProject.Controllers
 {
-    public class FAQController : Controller
+    public class AdminFaqController : Controller
     {
         LearnerContext context = new LearnerContext();
         // GET: FAQ
         public ActionResult Index()
         {
-            var values = context.FAQs.Where(x => x.Status == true).ToList();
+            var values = context.FAQs.ToList();
             return View(values);
         }
+
+        public ActionResult ChangeStatus(int id)
+        {
+            var value = context.FAQs.Find(id);
+            if (value.Status == true)
+            {
+                value.Status = false;
+            }
+            else
+            {
+                value.Status = true;
+            }
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
         // ekleme islemi 
         [HttpGet]
         public ActionResult AddFAQ()
@@ -35,7 +51,7 @@ namespace LearnerProject.Controllers
         public ActionResult DeleteFAQ(int id)
         {
             var value = context.FAQs.Find(id);
-            value.Status = false;
+            context.FAQs.Remove(value);
             context.SaveChanges();
             return RedirectToAction("Index");
         }

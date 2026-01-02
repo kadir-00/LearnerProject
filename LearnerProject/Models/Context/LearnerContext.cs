@@ -7,8 +7,12 @@ using LearnerProject.Models.Entitities;
 
 namespace LearnerProject.Models.Context
 {
-    public class LearnerContext :DbContext
+    public class LearnerContext : DbContext
     {
+        public LearnerContext() : base("LearnerContext")
+        {
+            Database.SetInitializer<LearnerContext>(null);
+        }
         // pluralize
         public DbSet<About> Abouts { get; set; }
         public DbSet<Banner> Banners { get; set; }

@@ -5,25 +5,25 @@
         <div class="row justify-content-center mb-5">
             <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="0">
                 <h2 class="line-bottom text-center mb-4">Son Eklenen Kurslar</h2>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <p>Alanında uzman eğitmenler tarafından hazırlanan en güncel ve popüler kurslarımızı keşfedin. Kendinizi geliştirmek için harika bir fırsat!</p>
             </div>
         </div>
         <div class="row">
             @foreach (var item in Model)
             {
 <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mt-4 mb-lg-0">
-    <div class="custom-media">
-        <a href="#"><img src="@item.ImageUrl" alt="Image" class="img-fluid"></a>
+    <div class="custom-media h-100">
+        <a href="#"><img src="@item.ImageUrl" alt="Image" class="img-fluid" style="height: 250px; object-fit: cover; width: 100%;"></a>
         <div class="custom-media-body">
             <div class="d-flex justify-content-between pb-3">
-                <div class="text-primary"><span class="uil uil-book-open"></span> <span>@item.CourseVideos.Where(x=>x.CourseId==item.CourseId).Sum(x=>x.VideoNumber) </span></div>
+                <div class="text-primary"><span class="uil uil-book-open"></span> <span>@item.CourseVideos.Where(x=>x.CourseId==item.CourseId).Sum(x=>x.VideoNumber) Ders</span></div>
                 <div class="review"><span class="icon-star"></span> <span>@item.Reviews.Where(x=>x.CourseId==item.CourseId).Average(x=>x.ReviewValue)</span></div>
             </div>
             <h3>@item.CourseName</h3>
             <p class="mb-4">@item.Description</p>
             <div class="border-top d-flex justify-content-between pt-3 mt-3 align-items-center">
-                <div><span class="price">@item.Price</span></div>
-                <div><a href="~/Default/CourseDetail/@item.CourseId">Learn More</a></div>
+                <div><span class="price">@item.Price TL</span></div>
+                <div><a href="~/Default/CourseDetail/@item.CourseId">Detaylar</a></div>
             </div>
         </div>
     </div>

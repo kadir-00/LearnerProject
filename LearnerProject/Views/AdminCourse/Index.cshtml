@@ -18,20 +18,21 @@
         <th>Aciklama</th>
         <th>Fiyat</th>
         <th>Kategori Adi</th>
-        
+
 
     </tr>
 
     @foreach (var item in Model)
     {
         count++;
-        <tr>    
+        <tr>
             <th>@count</th>
             <td> <img src="@item.ImageUrl" style="height:50px;width:50px" /> </td>
             <td>@item.CourseName</td>
 
-             @*// asagida yazdikki aciklama 50 karakterden uzunsa(?) 0 ile 50 arasindaki karakterleri yazsin degilse(:) kendisini alsin*@    
-            @*<td>@(item.Description.Length>50 ? item.Description.Substring(0,50)+"..." : item.Description  )</td>*@
+            @*// asagida yazdikki aciklama 50 karakterden uzunsa(?) 0 ile 50 arasindaki karakterleri yazsin degilse(:)
+        kendisini alsin*@
+            @*<td>@(item.Description.Length>50 ? item.Description.Substring(0,50)+"..." : item.Description )</td>*@
 
             <td>@item.Description</td>
 
@@ -40,8 +41,10 @@
 
             <td>
                 @*// i icon eklemek icin*@
-                <a href="/AdminCourse/DeleteCourse/@item.CourseId" class="btn btn-outline-danger"> <i class="fa fa-trash>"></i> SIL</a>
-                <a href="/AdminCourse/UpdateCourse/@item.CourseId" class="btn btn-outline-danger"> <i class="fa fa-pen>"> </i> GUNCELLE</a>
+                <a href="/AdminCourse/DeleteCourse/@item.CourseId" class="btn btn-outline-danger btn-sm m-1"> <i
+                        class="fa fa-trash"></i> Sil</a>
+                <a href="/AdminCourse/UpdateCourse/@item.CourseId" class="btn btn-outline-info btn-sm m-1"> <i
+                        class="fa fa-pen"></i> Guncelle</a>
 
             </td>
         </tr>
@@ -50,4 +53,4 @@
     }
 
 </table>
-<a href="/AdminCourse/AddCourse" class="btn btn-outline-primary">EKLE</a>
+<a href="/AdminCourse/AddCourse" class="btn btn-outline-success"><i class="fa fa-plus m-2"></i> Ekle</a>

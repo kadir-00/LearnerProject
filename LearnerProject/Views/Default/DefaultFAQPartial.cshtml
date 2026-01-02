@@ -7,37 +7,48 @@
                 <img src="/Templates/learner-1.0.0/images/img-school-5-min.jpg" alt="image" class="img-fluid">
             </div>
             <div class="col-lg-7 ml-auto" data-aos="fade-up" data-aos-delay="100">
-                <h3 class="line-bottom mb-4">FAQ</h3>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+                <h3 class="line-bottom mb-4">Sık Sorulan Sorular</h3>
+                <p>Eğitim platformumuz ve kurs süreçleri ile ilgili merak ettiğiniz tüm soruların cevaplarını burada
+                    bulabilirsiniz. </p>
 
-                
+
                 <div class="custom-accordion" id="accordion_1">
+                    @{
+                        int count = 0;
+                    }
                     @foreach (var item in Model)
                     {
-                        <div class="accordion-item">
+                        count++;
+                        var collapseId = "collapse_" + item.FAQId;
+                        var headingId = "heading_" + item.FAQId;
+                        var showClass = count == 1 ? "show" : "";
+                        var collapsedClass = count == 1 ? "" : "collapsed";
+                        var ariaExpanded = count == 1 ? "true" : "false";
 
+                        <div class="accordion-item">
                             <h2 class="mb-0">
-                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">@item.Question</button>
+                                <button class="btn btn-link @collapsedClass" type="button" data-toggle="collapse"
+                                    data-target="#@collapseId" aria-expanded="@ariaExpanded"
+                                    aria-controls="@collapseId">@item.Question</button>
                             </h2>
 
-                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion_1">
+                            <div id="@collapseId" class="collapse @showClass" aria-labelledby="@headingId"
+                                data-parent="#accordion_1">
                                 <div class="accordion-body">
                                     <div class="d-flex">
                                         <div class="accordion-img mr-4">
                                             <img src="@item.ImageUrl" alt="Image" class="img-fluid">
                                         </div>
                                         <div>
-                                            <p>@item.Answer  </p>
-
+                                            <p>@item.Answer</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
                         </div>
                     }
-                    </div>
-                    
+                </div>
+
 
                 <!-- .accordion-item -->
                 <!--<div class="accordion-item">
@@ -84,7 +95,7 @@
 
 
             </div>
-               
+
         </div>
     </div>
 </div>

@@ -1,0 +1,35 @@
+@model List<LearnerProject.Models.Entitities.Teslimonial>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h3>Referanslar</h3>
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>#</th>
+        <th>Ad Soyad</th>
+        <th>Unvan</th>
+        <th>Resim Url</th>
+        <th>Aciklama</th>
+        <th>Islemler</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.TeslimonialId</th>
+            <td>@item.NameSurname</td>
+            <td>@item.Title</td>
+            <td>@item.ImageUrl</td>
+            <td>@item.Description</td>
+            <td>
+                <a href="/AdminTestimonial/DeleteTestimonial/@item.TeslimonialId" class="btn btn-outline-danger btn-sm m-1">
+                    <i class="fa fa-trash"></i> Sil</a>
+                <a href="/AdminTestimonial/UpdateTestimonial/@item.TeslimonialId" class="btn btn-outline-info btn-sm m-1">
+                    <i class="fa fa-pen"></i> Guncelle</a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="/AdminTestimonial/AddTestimonial" class="btn btn-outline-success"><i class="fa fa-plus m-2"></i> Ekle</a>

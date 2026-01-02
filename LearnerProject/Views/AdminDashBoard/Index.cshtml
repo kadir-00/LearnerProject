@@ -1,10 +1,9 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
-<h2>AdminDashBoard Index</h2>
+<h2>AdminDashboard</h2>
 <div class="container-fluid pt-4 px-4">
     <div class="row g-4">
         <div class="col-sm-6 col-xl-3">
@@ -79,10 +78,46 @@
         </div>
         <div class="col-sm-6 col-xl-3">
             <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                <i class="fa fa-chart-pie fa-3x text-primary"></i>
+                <i class="fa fa-comment fa-3x text-primary"></i>
                 <div class="ms-3">
-                    <p class="mb-2">Ogrenci Sayisi</p>
+                    <p class="mb-2">Toplam Yorum</p>
                     <h6 class="mb-0">@ViewBag.v8</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+            <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa fa-chalkboard-teacher fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2">Egitmen Sayisi</p>
+                    <h6 class="mb-0">@ViewBag.v9</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+            <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa fa-envelope fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2">Okunmamis Mesaj</p>
+                    <h6 class="mb-0">@ViewBag.v10</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+            <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa fa-quote-left fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2">Referans Sayisi</p>
+                    <h6 class="mb-0">@ViewBag.v11</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+            <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa fa-registered fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2">Toplam Kurs Kaydi</p>
+                    <h6 class="mb-0">@ViewBag.v12</h6>
                 </div>
             </div>
         </div>

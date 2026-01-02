@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
@@ -10,7 +9,8 @@
 * License: https://creativecommons.org/licenses/by/3.0/
 */ -->
 <!doctype html>
-<html lang="en">
+<html lang="tr">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -20,7 +20,9 @@
     <meta name="description" content="" />
     <meta name="keywords" content="bootstrap, bootstrap4" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Display+Playfair:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Display+Playfair:wght@400;700&family=Inter:wght@400;700&display=swap"
+        rel="stylesheet">
 
 
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -35,7 +37,7 @@
     <link rel="stylesheet" href="~/Templates/learner-1.0.0/css/aos.css">
     <link rel="stylesheet" href="~/Templates/learner-1.0.0/css/style.css">
 
-    <title>Learner Free Bootstrap Template by Untree.co</title>
+    <title>Learner Project</title>
 </head>
 
 <body>
@@ -57,29 +59,32 @@
                 <div class="row align-items-center">
 
                     <div class="col-6 col-lg-6">
-                        <a href="#" class="small mr-3"><span class="icon-question-circle-o mr-2"></span> <span class="d-none d-lg-inline-block">Have a questions?</span></a>
-                        <a href="#" class="small mr-3"><span class="icon-phone mr-2"></span> <span class="d-none d-lg-inline-block"> 555 555 5555 </span></a>
-                        <a href="#" class="small mr-3"><span class="icon-envelope mr-2"></span> <span class="d-none d-lg-inline-block">info@kadir.com</span></a>
+                        <a href="#" class="small mr-3"><span class="icon-question-circle-o mr-2"></span> <span
+                                class="d-none d-lg-inline-block">Sorularınız mı var?</span></a>
+                        <a href="#" class="small mr-3"><span class="icon-phone mr-2"></span> <span
+                                class="d-none d-lg-inline-block"> 555 555 5555 </span></a>
+                        <a href="#" class="small mr-3"><span class="icon-envelope mr-2"></span> <span
+                                class="d-none d-lg-inline-block">info@kadir.com</span></a>
                     </div>
 
                     <div class="col-6 col-lg-6 text-right">
 
                         <a href="/StudentLogin/Index" class="small mr-3">
                             <span class="icon-lock"></span>
-                            Log In ogrenci girisi
+                            Öğrenci Girişi
                         </a>
                         <a href="/TeacherLogin/Index" class="small mr-3">
                             <span class="icon-lock"></span>
-                            Log In egitmen girisi
+                            Eğitmen Girişi
                         </a>
                         <a href="/AdminCourse/Index" class="small mr-3">
                             <span class="icon-lock"></span>
-                            Log In admin girisi
+                            Admin Girişi
                         </a>
 
                         <a href="/StudentRegister/Index" class="small">
                             <span class="icon-person"></span>
-                            Register ogrenci kaydi
+                            Kayıt Ol
                         </a>
                     </div>
 
@@ -89,118 +94,61 @@
         <div class="sticky-nav js-sticky-header">
             <div class="container position-relative">
                 <div class="site-navigation text-center">
-                    <a href="/Default/Index" class="logo menu-absolute m-0">Learner<span class="text-primary">.</span></a>
+                    <a href="/Default/Index" class="logo menu-absolute m-0">Learner<span
+                            class="text-primary">.</span></a>
 
                     <ul class="js-clone-nav d-none d-lg-inline-block site-menu">
-                        <li class="active"><a href="/Default/Index">Home</a></li>
-                        <li class="has-children">
-                            @*<a href="#">Dropdown</a>
-                            <ul class="dropdown">
-                                <li><a href="elements.html">Elements</a></li>
-                                <li class="has-children">
-                                    <a href="#">Menu Two</a>
-                                    <ul class="dropdown">
-                                        <li><a href="#">Sub Menu One</a></li>
-                                        <li><a href="#">Sub Menu Two</a></li>
-                                        <li><a href="#">Sub Menu Three</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Menu Three</a></li>
-                            </ul>*@
-                        </li>
-                        @*<li><a href="staff.html">Our Staff</a></li>
-                        <li><a href="news.html">News</a></li>*@
-                        @*<li><a href="gallery.html">Gallery</a></li>*@
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="/Contact/Index">Contact</a></li>
-                        <li><a href="/Default/AllCourse">Kurslarimiz</a></li>
+                        <li class="active"><a href="/Default/Index">Ana Sayfa</a></li>
+                        <li><a href="#about-us">Hakkımızda</a></li>
+                        <li><a href="/Contact/Index">İletişim</a></li>
+                        <li><a href="/Default/AllCourse">Kurslarımız</a></li>
                     </ul>
-
-                    @*<a href="#" class="btn-book btn btn-secondary btn-sm menu-absolute">Enroll Now</a>*@
-
-                    <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none light" data-toggle="collapse" data-target="#main-navbar">
+                    <a href="#"
+                        class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none light"
+                        data-toggle="collapse" data-target="#main-navbar">
                         <span></span>
                     </a>
-
                 </div>
             </div>
         </div>
     </nav>
 
-
     @RenderBody()
 
-
-
-
     <div class="site-footer">
-
-
         <div class="container">
-
             <div class="row">
                 <div class="col-lg-3 mr-auto">
-                    <!--<div class="widget">
-                        <h3>About Us<span class="text-primary">.</span> </h3>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    </div>--> <!-- /.widget -->
                     <div class="widget">
-                        <h3>Connect</h3>
+                        <h3>Bizi Takip Edin</h3>
                         <ul class="list-unstyled social">
                             <li><a href="#"><span class="icon-instagram"></span></a></li>
                             <li><a href="#"><span class="icon-twitter"></span></a></li>
                             <li><a href="#"><span class="icon-facebook"></span></a></li>
                             <li><a href="#"><span class="icon-linkedin"></span></a></li>
                             <li><a href="#"><span class="icon-pinterest"></span></a></li>
-                          
+
                         </ul>
-                    </div> <!-- /.widget -->
-                </div> <!-- /.col-lg-3 -->
+                    </div>
+                </div>
 
                 <div class="col-lg-2 ml-auto">
                     <div class="widget">
-                        <h3>Projects</h3>
+                        <h3>Projeler</h3>
                         <ul class="list-unstyled float-left links">
-                            <li> Web Design </li>
+                            <li> Web Tasarım </li>
                             <li> HTML5 </li>
                             <li> CSS3 </li>
                             <li> jQuery </li>
                             <li> Bootstrap </li>
                         </ul>
-                    </div> <!-- /.widget -->
-                </div> <!-- /.col-lg-3 -->
-
-                <!--<div class="col-lg-3">-->
-                    @*<div class="widget">
-                        <h3>Gallery</h3>
-                        <ul class="instafeed instagram-gallery list-unstyled">
-                            <li>
-                                <a class="instagram-item" href="images/gal_1.jpg" data-fancybox="gal"><img src="~/Templates/learner-1.0.0/images/gal_1.jpg" alt="" width="72" height="72"></a>
-                            </li>
-                            <li>
-                                <a class="instagram-item" href="images/gal_2.jpg" data-fancybox="gal"><img src="~/Templates/learner-1.0.0/images/gal_2.jpg" alt="" width="72" height="72"></a>
-                            </li>
-                            <li>
-                                <a class="instagram-item" href="images/gal_3.jpg" data-fancybox="gal"><img src="~/Templates/learner-1.0.0/images/gal_3.jpg" alt="" width="72" height="72"></a>
-                            </li>
-                            <li>
-                                <a class="instagram-item" href="images/gal_4.jpg" data-fancybox="gal"><img src="~/Templates/learner-1.0.0/images/gal_4.jpg" alt="" width="72" height="72"></a>
-                            </li>
-                            <li>
-                                <a class="instagram-item" href="images/gal_5.jpg" data-fancybox="gal"><img src="~/Templates/learner-1.0.0/images/gal_5.jpg" alt="" width="72" height="72"></a>
-                            </li>
-                            <li>
-                                <a class="instagram-item" href="images/gal_6.jpg" data-fancybox="gal"><img src="~/Templates/learner-1.0.0/images/gal_6.jpg" alt="" width="72" height="72"></a>
-                            </li>
-                        </ul>
-                    </div>*@ <!-- /.widget -->
-                <!--</div>--> <!-- /.col-lg-3 -->
-
+                    </div>
+                </div>
 
                 <div class="col-lg-3">
                     <div class="widget">
-                        <h3>Contact</h3>
-                        <address>2.Cicek Sokak. Kecioren, Ankara 0601</address>
+                        <h3>İletişim</h3>
+                        <address>2.Çiçek Sokak. Keçiören, Ankara 0601</address>
                         <ul class="list-unstyled links mb-4">
                             <li><a href="tel://11234567890">+9(555)-556-7550</a></li>
                             <li><a href="tel://11234567890">+9(255)-556-7850</a></li>
@@ -208,14 +156,12 @@
                         </ul>
                     </div> <!-- /.widget -->
                 </div> <!-- /.col-lg-3 -->
-
             </div> <!-- /.row -->
 
             <div class="row mt-5">
                 <div class="col-12 text-center">
                     <p>
-                        Copyright &copy;
-                        <script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a>  Distributed By <a href="https://themewagon.com">ThemeWagon</a> <!-- License information: https://untree.co/license/ -->
+                        Designed with love by <a href="#">Kadir Uzun</a>
                 </div>
             </div>
         </div> <!-- /.container -->
@@ -227,7 +173,6 @@
             <span class="sr-only">Loading...</span>
         </div>
     </div>
-
     <script src="~/Templates/learner-1.0.0/js/jquery-3.4.1.min.js"></script>
     <script src="~/Templates/learner-1.0.0/js/popper.min.js"></script>
     <script src="~/Templates/learner-1.0.0/js/bootstrap.min.js"></script>
@@ -238,8 +183,6 @@
     <script src="~/Templates/learner-1.0.0/js/jquery.sticky.js"></script>
     <script src="~/Templates/learner-1.0.0/js/aos.js"></script>
     <script src="~/Templates/learner-1.0.0/js/custom.js"></script>
-
 </body>
 
 </html>
-

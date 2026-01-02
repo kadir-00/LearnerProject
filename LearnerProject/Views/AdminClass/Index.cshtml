@@ -30,16 +30,16 @@
             <td>@item.Name</td>
             <td> <img src="@item.Icon" style="height:50px;width:50px" /> </td>
             <td>@item.Description</td>
-          
+
 
             <td>
                 @*// i icon eklemek icin*@
-                <a href="/AdminClass/DeleteClass/@item.ClassRoomId" class="btn btn-outline-danger"> <i class="fa fa-trash>"></i> SIL</a>
-                <a href="/AdminClass/UpdateClass/@item.ClassRoomId" class="btn btn-outline-danger"> <i class="fa fa-pen>"> </i> GUNCELLE</a>
+                <a href="/AdminClass/DeleteClass/@item.ClassRoomId" class="btn btn-outline-danger btn-sm m-1"> <i
+                        class="fa fa-trash"></i> Sil</a>
+                <a href="/AdminClass/UpdateClass/@item.ClassRoomId" class="btn btn-outline-info btn-sm m-1"> <i
+                        class="fa fa-pen"></i> Guncelle</a>
             </td>
         </tr>
     }
 </table>
-<a href="/AdminClass/AddClass" class="btn btn-outline-primary">EKLE</a>
-
-
+<a href="/AdminClass/AddClass" class="btn btn-outline-success"><i class="fa fa-plus m-2"></i> Ekle</a>
