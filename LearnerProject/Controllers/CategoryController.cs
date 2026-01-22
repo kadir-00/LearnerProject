@@ -45,21 +45,46 @@ namespace LearnerProject.Controllers
         }
 
         [HttpGet]
-        public ActionResult UpdateCategory(int id) 
+        public ActionResult UpdateCategory(int id)
         {
-        var value = context.Categories.Find(id);
+            var value = context.Categories.Find(id);
             return View(value);
         }
 
         [HttpPost]
-        public ActionResult UpdateCategory(Category category) 
+        public ActionResult UpdateCategory(Category category)
         {
             var value = context.Categories.Find(category.CategoryId);
-            value.CategoryName=category.CategoryName;
-            value.Icon=category.Icon;
+            value.CategoryName = category.CategoryName;
+            value.Icon = category.Icon;
             value.Status = true;
             context.SaveChanges();
             return RedirectToAction(nameof(Index));
+        }
+
+
+        public ActionResult TranslateCategories()
+        {
+            var categories = context.Categories.ToList();
+            foreach (var category in categories)
+            {
+                switch (category.CategoryName)
+                {
+                    case "Development": category.CategoryName = "Yazılım"; break;
+                    case "Business": category.CategoryName = "İşletme"; break;
+                    case "Finance": category.CategoryName = "Finans"; break;
+                    case "Design": category.CategoryName = "Tasarım"; break;
+                    case "Marketing": category.CategoryName = "Pazarlama"; break;
+                    case "Photography": category.CategoryName = "Fotoğrafçılık"; break;
+                    case "Music": category.CategoryName = "Müzik"; break;
+                    case "Personal Development": category.CategoryName = "Kişisel Gelişim"; break;
+                    case "Science": category.CategoryName = "Bilim"; break;
+                    case "IT & Software": category.CategoryName = "BT ve Yazılım"; break;
+                        // Add more mappings as needed
+                }
+            }
+            context.SaveChanges();
+            return RedirectToAction("Index");
         }
 
     }
