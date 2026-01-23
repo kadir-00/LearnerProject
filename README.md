@@ -64,7 +64,7 @@ Bu projenin geliştirilmesindeki katkıları ve rehberliği için **Murat Yüced
 
 ## 📺 Proje Tanıtım Videosu
 
-[VİDEOYU BURAYA SÜRÜKLEYİP BIRAKIN - Yüklenince burası linke dönüşecek]
+https://github.com/user-attachments/assets/f08ad7bb-715c-4e76-a9dd-03e65600d867
 
 
 *Projenin tüm fonksiyonlarını ve paneller arası geçişleri yukarıdaki videodan izleyebilirsiniz.*
