@@ -32,9 +32,16 @@ namespace LearnerProject.Controllers
             {
                 //Session.Abandon();
                 FormsAuthentication.SetAuthCookie(values.UserName, false);
-                Session["studentName"]=values.UserName;
-                return RedirectToAction("Index" , "StudentCourse");
+                Session["studentName"] = values.UserName;
+                return RedirectToAction("Index", "StudentCourse");
             }
+        }
+
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Index", "StudentLogin");
         }
     }
 }

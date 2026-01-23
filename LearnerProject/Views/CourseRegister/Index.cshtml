@@ -4,10 +4,48 @@
     Layout = "~/Views/StudentLayout/Index.cshtml";
 }
 
-<h3>Kurs Kayıt Sayfası</h3>
-<form method="post">
-    <label>Kurs Adı</label>
-    @Html.DropDownListFor(x => x.CourseId, (List<SelectListItem>)ViewBag.course, "Kurs Seçiniz", new { @class = "form-control" })
-    <br />
-    <button class="btn btn-outline-primary">Kursa Kayıt Ol</button>
-</form>
+<div class="row justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="col-md-6 col-lg-5">
+        <div class="card shadow-lg border-0 rounded-4">
+            <div class="card-header bg-primary text-white text-center py-4 rounded-top-4">
+                <h3 class="mb-0 fw-bold">🎓 Yeni Kursa Kayıt</h3>
+                <p class="mb-0 text-white-50">Öğrenme yolculuğuna başla</p>
+            </div>
+            
+            <div class="card-body p-5">
+                <form method="post">
+                    <div class="mb-4">
+                        <label class="form-label fw-bold text-secondary">Kurs Seçimi</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-light border-end-0">
+                                <i class="fas fa-book-open text-primary"></i>
+                            </span>
+                            @Html.DropDownListFor(x => x.CourseId, (List<SelectListItem>)ViewBag.course, "Bir Kurs Seçiniz", new { @class = "form-select form-select-lg border-start-0 ps-0", @style="border-radius: 0 0.5rem 0.5rem 0; background-color: white !important; color: #333 !important;" })
+                        </div>
+                        <div class="form-text mt-2">
+                             Listeden katılmak istediğiniz eğitimi seçiniz.
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary btn-lg w-100 rounded-pill shadow-sm py-3 fw-bold transition-transform hover-lift">
+                        <i class="fas fa-check-circle me-2"></i> Kursa Kayıt Ol
+                    </button>
+                    
+                    <div class="text-center mt-4">
+                        <small class="text-muted">Kayıt işleminiz anında onaylanacaktır.</small>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .hover-lift:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+    }
+    .transition-transform {
+        transition: transform .2s;
+    }
+</style>

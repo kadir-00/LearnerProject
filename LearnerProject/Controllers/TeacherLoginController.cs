@@ -24,17 +24,24 @@ namespace LearnerProject.Controllers
         public ActionResult Index(Teacher teacher)
         {
             var values = context.Teacher.FirstOrDefault(x => x.NameSurname == teacher.NameSurname && x.Password == teacher.Password);
-            if (values == null) 
+            if (values == null)
             {
-                ModelState.AddModelError(" ","Kullanici adi ve ya sifre hatali ");
+                ModelState.AddModelError(" ", "Kullanici adi ve ya sifre hatali ");
                 return View();
             }
-            else 
+            else
             {
                 FormsAuthentication.SetAuthCookie(values.NameSurname, false);
-                Session["teacherName"]=values.NameSurname;
-                return RedirectToAction("Index" , "TeacherCourse");
+                Session["teacherName"] = values.NameSurname;
+                return RedirectToAction("Index", "TeacherCourse");
             }
+        }
+
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Index");
         }
     }
 }
